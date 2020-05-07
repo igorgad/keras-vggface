@@ -1,6 +1,6 @@
 # keras-vggface [![Build Status](https://travis-ci.org/rcmalli/keras-vggface.svg?branch=master)](https://travis-ci.org/rcmalli/keras-vggface) [![PyPI Status](https://badge.fury.io/py/keras-vggface.svg)](https://badge.fury.io/py/keras-vggface) [![PyPI Status](https://pepy.tech/badge/keras-vggface)](https://pepy.tech/project/keras-vggface)
 
-Oxford VGGFace  Implementation using Keras Functional Framework v2+
+Oxford VGGFace  Implementation using tf.Keras Functional Framework v2+
 
 - Models are converted from original caffe networks.
 - It supports only Tensorflow backend.
@@ -10,7 +10,7 @@ Oxford VGGFace  Implementation using Keras Functional Framework v2+
 
 ~~~bash
 # Most Recent One (Suggested)
-pip install git+https://github.com/rcmalli/keras-vggface.git
+pip install git+https://github.com/igorgad/keras-vggface.git
 # Release Version
 pip install keras_vggface
 ~~~
@@ -18,8 +18,8 @@ pip install keras_vggface
 
 ### Library Versions
 
-- Keras v2.2.4
-- Tensorflow v1.14.0
+- Keras 2.3.0-tf
+- Tensorflow 2.2.0-rc4
 - **Warning: Theano backend is not supported/tested for now.**
 
 ### Example Usage
