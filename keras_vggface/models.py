@@ -16,7 +16,7 @@ from tensorflow.keras import layers
 def VGG16(include_top=True, weights='vggface',
           input_tensor=None, input_shape=None,
           pooling=None,
-          classes=2622):
+          classes=2622, name=''):
     input_shape = _obtain_input_shape(input_shape,
                                       default_size=224,
                                       min_size=48,
@@ -93,7 +93,7 @@ def VGG16(include_top=True, weights='vggface',
     else:
         inputs = img_input
         # Create model.
-    model = Model(inputs, x, name='vggface_vgg16')  # load weights
+    model = Model(inputs, x, name='vggface_vgg16' + name)  # load weights
     if weights == 'vggface':
         if include_top:
             weights_path = get_file('rcmalli_vggface_tf_vgg16.h5',
@@ -197,7 +197,7 @@ def resnet_conv_block(input_tensor, kernel_size, filters, stage, block,
 def RESNET50(include_top=True, weights='vggface',
              input_tensor=None, input_shape=None,
              pooling=None,
-             classes=8631):
+             classes=8631, name=''):
     input_shape = _obtain_input_shape(input_shape,
                                       default_size=224,
                                       min_size=32,
@@ -262,7 +262,7 @@ def RESNET50(include_top=True, weights='vggface',
     else:
         inputs = img_input
     # Create model.
-    model = Model(inputs, x, name='vggface_resnet50')
+    model = Model(inputs, x, name='vggface_resnet50' + name)
 
     # load weights
     if weights == 'vggface':
@@ -402,7 +402,7 @@ def senet_identity_block(input_tensor, kernel_size,
 def SENET50(include_top=True, weights='vggface',
             input_tensor=None, input_shape=None,
             pooling=None,
-            classes=8631):
+            classes=8631, name=''):
     input_shape = _obtain_input_shape(input_shape,
                                       default_size=224,
                                       min_size=197,
@@ -469,7 +469,7 @@ def SENET50(include_top=True, weights='vggface',
     else:
         inputs = img_input
     # Create model.
-    model = Model(inputs, x, name='vggface_senet50')
+    model = Model(inputs, x, name='vggface_senet50' + name)
 
     # load weights
     if weights == 'vggface':
